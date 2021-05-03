@@ -1,1 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    background: linear-gradient(90deg, rgba(143,92,181,1) 26%, rgba(252,70,107,1) 88%);
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 62.5%;
+    min-height: 100vh;
+    margin: none;
+}
+
+header{
+    font-size: 1rem;
+}
+
+header, form{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form input, form button{
+    padding: .3rem;
+    border: none;
+    outline: none;
+
+}
+
+form input{
+    padding-right: 21px;
+}
+
+
+form button{
+    color: rgba(143,92,181,1);
+    background: white;
+    cursor: pointer;
+    margin-left: -21px;
+    transition: all .3s ease;
+}
+
+form button:hover{
+    color: white;
+    background: rgba(143,92,181,1);
+}

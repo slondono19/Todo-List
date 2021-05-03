@@ -10,7 +10,7 @@ body{
 }
 
 header{
-    font-size: 1rem;
+    font-size: 1.5rem;
 }
 
 header, form{
@@ -21,14 +21,14 @@ header, form{
 }
 
 form input, form button{
-    padding: .3rem;
+    padding: .5rem;
     border: none;
     outline: none;
 
 }
 
 form input{
-    padding-right: 21px;
+    padding-right: 18px;
 }
 
 
@@ -36,7 +36,7 @@ form button{
     color: rgba(143,92,181,1);
     background: white;
     cursor: pointer;
-    margin-left: -21px;
+    margin-left: -18px;
     transition: all .3s ease;
 }
 

@@ -49,7 +49,13 @@ function deleteCheck(event){
     const item = event.target;
 
     if(item.classList[0] === 'trash-button' ){
-        item.parentElement.remove();
+
+        //animation
+        item.parentElement.classList.add('fall');
+        item.parentElement.addEventListener('transitionend', function(){
+             item.parentElement.remove();
+
+        })
     }
 
     //Check mark

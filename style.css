@@ -85,6 +85,7 @@ form button:hover{
 .todo-item{
     font-size: .9rem;
     padding: 0rem 0.5rem;
+
 }
 
 .trash-button, .complete-button{

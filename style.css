@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+:root{
+    --purpleColor: rgba(143,92,181,1);
+    --redColor:rgba(252,70,107,1);
+}
 body{
-    background: linear-gradient(90deg, rgba(143,92,181,1) 26%, rgba(252,70,107,1) 88%);
+    background: linear-gradient(90deg,var(--purpleColor) 26%, var(--redColor) 88%);
     color: white;
     font-family: "Poppins", sans-serif;
     font-size: 62.5%;
@@ -34,7 +38,7 @@ form input{
 
 
 form button{
-    color: rgba(143,92,181,1);
+    color: var(--purpleColor);
     font-size: 1.1rem;
     background: white;
     cursor: pointer;
@@ -44,7 +48,7 @@ form button{
 
 form button:hover{
     color: white;
-    background: rgba(143,92,181,1);
+    background: var(--purpleColor);
 }
 
 .todo-container{
@@ -112,4 +116,35 @@ form button:hover{
 .fall{
     transform: translateY(8rem) rotateZ(20deg);
     opacity: 0;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+}
+
+.select{
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+select{
+    color: var(--purpleColor);
+    width: 7rem;
+    cursor: pointer;
+    padding: .2rem 0rem;
+}
+
+.select::after{
+    content: "\25BC";
+    position: absolute;
+    background-color: var(--purpleColor);
+    top: 0;
+    right: 0;
+    padding: 0.2rem .5rem;
+    pointer-events: none;
 }

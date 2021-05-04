@@ -97,3 +97,13 @@ form button:hover{
 .trash-button{
     background-color: rgb(255, 0, 0);
 }
+
+.fa-trash, .fa-check{
+    pointer-events: none;
+
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: .4;
+}

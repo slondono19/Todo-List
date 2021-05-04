@@ -28,19 +28,72 @@ form input, form button{
 }
 
 form input{
-    padding-right: 18px;
+    padding-right: 22px;
+    width: 25%;
 }
 
 
 form button{
     color: rgba(143,92,181,1);
+    font-size: 1.1rem;
     background: white;
     cursor: pointer;
-    margin-left: -18px;
+    margin-left: -26px;
     transition: all .3s ease;
 }
 
 form button:hover{
     color: white;
     background: rgba(143,92,181,1);
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.todo-list{
+    min-width: 20%;
+    list-style: none;
+}
+.todo-input{
+    font-size: 1.1rem;
+}
+.todo{
+    margin: .5rem;
+    background-color: white;
+    color: black;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    right: 20%;
+}
+
+.todo li{
+    flex: 1;
+}
+
+.todo-item{
+    font-size: .9rem;
+    padding: 0rem 0.5rem;
+}
+
+.trash-button, .complete-button{
+    color: white;
+    outline: none;
+    border: none;
+    padding: .35rem;
+    margin: 1px;
+    cursor: pointer;
+    font-size: .9rem;
+}
+.complete-button{
+    background-color: rgb(109, 241, 0);
+}
+.trash-button{
+    background-color: rgb(255, 0, 0);
 }

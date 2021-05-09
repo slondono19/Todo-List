@@ -5,7 +5,7 @@ const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
 const filterOption = document.querySelector('.filter-todo')
 // Event listeners
-
+document.addEventListener('DOMContentLoaded', getTodos);
 todoButton.addEventListener('click', addTodo);
 todoList.addEventListener('click', deleteCheck);
 filterOption.addEventListener('click', filterTodo);
@@ -25,6 +25,8 @@ function addTodo(event){
     newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
+    //Add todo to localStorage
+    saveLocalTodos(todoInput.value);
 
     // Check mark button
 
@@ -89,3 +91,57 @@ function filterTodo(e) {
       }
     });
   }
+
+function saveLocalTodos(todo){
+  //Check Do I already have todos there?
+
+  let todos;
+  if(localStorage.getItem('todos') === null){
+    todos = [];
+
+  }else{
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+
+  todos.push(todo);
+  localStorage.setItem('todos', JSON.stringify(todos));
+}
+
+function getTodos(){
+  let todos;
+  if(localStorage.getItem('todos') === null){
+    todos = [];
+
+  }else{
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+  todos.forEach(function(todo){
+    const todoDiv = document.createElement('div')
+    todoDiv.classList.add('todo');
+
+    //Create LI
+
+    const newTodo = document.createElement('li')
+    newTodo.innerText = todo;
+    newTodo.classList.add('todo-item');
+    todoDiv.appendChild(newTodo);
+
+
+    // Check mark button
+
+    const completedButton = document.createElement('button');
+    completedButton.innerHTML= '<i class="fas fa-check"></i>';
+    completedButton.classList.add('complete-button');
+    todoDiv.appendChild(completedButton);
+
+        // Check trash button
+
+    const trashButton = document.createElement('button');
+    trashButton.innerHTML= '<i class="fas fa-trash"></i>';
+    trashButton.classList.add('trash-button');
+    todoDiv.appendChild(trashButton);
+
+        //Append to list
+    todoList.appendChild(todoDiv);
+  });
+}

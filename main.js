@@ -93,6 +93,16 @@ function filterTodo(e) {
     });
   }
 
+  function checkTodosLocalStorage(){
+    let todos;
+    if(localStorage.getItem('todos') === null){
+      todos = [];
+  
+    }else{
+      todos = JSON.parse(localStorage.getItem('todos'));
+    }
+  }
+
 function saveLocalTodos(todo){
   //Check Do I already have todos there?
 

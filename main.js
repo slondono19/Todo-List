@@ -143,5 +143,6 @@ function getTodos(){
 
         //Append to list
     todoList.appendChild(todoDiv);
+    
   });
 }
